@@ -11,9 +11,8 @@ from pathlib import Path
 from transformers import AutoTokenizer
 from convert_subgraphs import get_subgraph
 from utils import get_logger, seed_everything, set_global_log_level
+from constants import EMBEDDINGS_FILENAME,DATA_PATH
 
-EMBEDDINGS_FILENAME = "embeddings"
-DATA_PATH = "data/"
 logger = get_logger(__name__)
 
 def calculate_embeddings(text, tokenizer, model, with_classifier=True):

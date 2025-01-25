@@ -1,7 +1,7 @@
 import pandas as pd
 import argparse
 from utils import set_global_log_level
-import Path
+from pathlib import Path
 from constants import DATA_PATH,SUBGRAPH_FOLDER
 import os
 import pickle
@@ -47,7 +47,7 @@ def save_subgraphs(split,method):
         raise ValueError("Invalid split name")
     combined_dict={}
     for i in range(num):
-        with open(f'./data/{sub_path}set_final_{i+1}.pickle', 'rb') as file:
+        with open(f'./filter_evidence/{sub_path}_com_evi_{i+1}.pickle', 'rb') as file:
             dict = pickle.load(file)
             combined_dict.update(dict)
     subgraphs=convert_subgraphs(combined_dict,method)
